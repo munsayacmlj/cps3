@@ -43971,7 +43971,11 @@ var render = function() {
           expression: "messageText"
         }
       ],
-      attrs: { type: "text", placeholder: "Start typing your message..." },
+      attrs: {
+        id: "message",
+        type: "text",
+        placeholder: "Start typing your message..."
+      },
       domProps: { value: _vm.messageText },
       on: {
         keydown: function($event) {
