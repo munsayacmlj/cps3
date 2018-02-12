@@ -23,7 +23,8 @@ Vue.component('chat-composer', require('./components/ChatComposer.vue'));
 const app = new Vue({
     el: '#app',
     data: {
-    	messages: []
+    	messages: [],
+        usersInRoom: []
     },
     methods: {
     	addMessage(message) {
@@ -32,7 +33,7 @@ const app = new Vue({
 
     		// Persist to database etc
              axios.post('/messages', message).then(response =>{
-                console.log(response);
+                // console.log(response);
             });
     	}
     },
@@ -41,5 +42,23 @@ const app = new Vue({
         axios.get('/messages').then(response => {
             this.messages = response.data;
         });
+
+        Echo.join('chatroom')
+            .here((users) => {
+                this.usersInRoom = users;
+            })
+            .joining((user) => {
+                this.usersInRoom.push(user);
+            })
+            .leaving((user) => {
+                this.usersInRoom = this.usersInRoom.filter(u => u != user);
+            })
+            .listen('MessagePosted', (e) => {
+                this.messages.push({
+                    message: e.message.message,
+                    user: e.user
+                });
+                // console.log(e);
+            });
     }
 });
