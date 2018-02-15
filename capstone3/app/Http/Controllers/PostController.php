@@ -11,6 +11,7 @@ class PostController extends Controller
     public function showPosts() {
     	$posts = Post::all();
     	$topics = Topic::all();
+       
     	return view('pages/post', compact('posts', 'topics'));
     }
 
@@ -31,6 +32,9 @@ class PostController extends Controller
 
     		$post->image = $filename;
     	}
+        else{
+            $post->image = '';
+        }
     	$post->save();
 
     	return redirect('/posts');
@@ -41,9 +45,10 @@ class PostController extends Controller
     	return redirect('/posts');
     }
 
-    public function editPost($id) {
+    public function editPost(Request $request, $id) {
     	$post = Post::find($id);
-
-    	return view('pages/edit', compact('post'));
+        $topics = Topic::all();
+        $ip = $request->getClientIp();
+    	return view('pages/edit', compact('post', 'topics', 'ip'));
     }
 }

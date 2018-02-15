@@ -2,7 +2,7 @@
 
 @section('content')
 	
-	<div class="container-fluid">
+	<div class="container-fluid" style="background-color: #fff;">
 		<div class="row px-3">
 			@foreach ($posts as $post)
 			<div class="col col-sm-4 col-md-4 col-xl-2 outer-card" id="card_{{ $post->id }}">
@@ -10,6 +10,7 @@
 					<div class="card-header">
 						<span class="card-poster h5 float-left">{{ $post->user->name }}</span>
 						<span class="float-right">
+                        @auth    
 							@if ($post->user->name == Auth::user()->name)
 							<a href='{{ url("post/edit/$post->id") }}' class="edit-post">
 								<i class="far fa-edit"></i>
@@ -18,15 +19,18 @@
 								<i class="far fa-trash-alt"></i>
 							</a>
 							@endif
+                        @endauth
 						</span>
 					</div>
 					<div class="card-body">
 						<div class="card-title h5 pb-1">{{ $post->title }}</div>
 						<p>{{ $post->content }}</p>
 					</div>
-					<a href="#">
-						<img src='{{ asset("storage/upload/$post->image") }}'>
-					</a>
+					@if ($post->image != NULL)
+                        <a href="#">
+    						<img src='{{ asset("storage/upload/$post->image") }}'>
+    					</a>
+                    @endif
 					<div class="card-footer">
 						<p class="m-0">
 							<i class="fas fa-tag"></i>
@@ -104,9 +108,9 @@
                 </div>
             @endauth
           </div>
-          <div class="modal-footer">
-            {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
-          </div> 
+          {{-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>  --}}
         </div>
       </div> 
     </div> <!-- /.modal -->

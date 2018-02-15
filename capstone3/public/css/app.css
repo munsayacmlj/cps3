@@ -10003,6 +10003,12 @@ a.text-dark:focus {
 
 body {
   font-size: 13px;
+  color: #626262;
+  background-color: #fff;
+}
+
+.edit-wrapper {
+  background-color: #f2f2f2;
 }
 
 .navbar-laravel {
@@ -10027,6 +10033,8 @@ body {
   margin-top: -5px;
 }
 
+/* Modal */
+
 .custom-file-uploader {
   position: relative;
 }
@@ -10045,6 +10053,8 @@ body {
   cursor: default;
 }
 
+/* Posts Page */
+
 .outer-card .card {
   background-color: #fff;
 }
@@ -10060,5 +10070,54 @@ body {
 
 .outer-card .card .card-footer {
   background-color: #fff;
+}
+
+/* Edit page */
+
+.outer-edit-box {
+  background-color: #fff;
+}
+
+.outer-edit-box .inner-edit-box {
+  display: block;
+}
+
+.outer-edit-box .inner-edit-box label {
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.outer-edit-box .inner-edit-box .edit-content .input-group .input-group-addon {
+  background: #f0f0f0;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  color: rgba(98, 98, 98, 0.47);
+  font-size: 14px;
+  padding: 6px 9px;
+}
+
+.outer-edit-box .inner-edit-box .edit-content .input-group .input-group-addon:first-child {
+  border-right: 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.outer-edit-box .inner-edit-box .edit-content .input-group select {
+  border-left: 0;
+}
+
+.outer-edit-box .inner-edit-box .right-side .image-row {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.outer-edit-box .inner-edit-box .right-side .image-row .inner-image {
+  width: inherit;
+  padding: 5px;
+}
+
+.outer-edit-box .inner-edit-box .right-side .image-row .inner-image img {
+  border-radius: 3px;
+  width: 100%;
 }
 
