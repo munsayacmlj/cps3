@@ -17,13 +17,17 @@ Route::get('/', function () {
     return view('home', compact('topics'));
 });
 
-Route::get('/posts', 'PostController@showPosts');
+Route::get('/posts', 'PostController@showAllPosts');
 
 Route::post('/posts', 'PostController@savePost');
 
-Route::post('/post/{id}/delete', 'PostController@deletePost');
+Route::get('posts/{id}', 'PostController@showPost');
 
-Route::get('post/{id}/edit', 'PostController@editPost');
+Route::post('/posts/{id}/delete', 'PostController@deletePost');
+
+Route::get('posts/{id}/edit', 'PostController@editPostForm');
+
+Route::post('posts/{id}/edit', 'PostController@updatePost');
 
 Auth::routes();
 

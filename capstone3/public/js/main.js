@@ -4,6 +4,22 @@ $(document).ready(function() {
 	    $("#filename").val(image);
 	});
 
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+
+			reader.onload = function(e) {
+				$("#image-tag").attr('src', e.target.result);
+			}
+
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+
+	$("#edit-image").change(function() {
+		readURL(this);
+	});
+
 	$(".delete-post").click(function() {
 		// e.preventDefault();
 		var postId = $(this).data('id');
@@ -14,7 +30,7 @@ $(document).ready(function() {
 				headers: {
 	          		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 	          	},
-				url: '/post/delete/'+postId,
+				url: '/posts/' + postId + '/delete',
 				type: 'POST',
 				data: {
 					
