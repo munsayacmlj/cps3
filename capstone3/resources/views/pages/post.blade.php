@@ -2,7 +2,7 @@
 
 @section('content')
 	
-	<div class="container-fluid" style="background-color: #fff;">
+	<div class="container-fluid py-4" style="background-color: #fff;">
 		<div class="row px-3">
 			@foreach ($posts as $post)
 			<div class="col col-sm-4 col-md-4 col-xl-2 outer-card" id="card_{{ $post->id }}">

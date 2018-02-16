@@ -56,8 +56,13 @@
 								<div class="col py-3">
 									<label>Text</label>
 									<textarea name="content" class="form-control" rows="7">{{ $post->content }}</textarea>
-									{{ $ip }}
 								</div>
+							</div>
+						</div>
+
+						<div class="fourth-row">
+							<div class="col mt-2">
+								<input type="submit" name="save_edit" value="Save" class="btn btn-primary float-right px-4">
 							</div>
 						</div>
 					</div> {{-- edit-content --}}

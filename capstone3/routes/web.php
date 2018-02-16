@@ -21,9 +21,9 @@ Route::get('/posts', 'PostController@showPosts');
 
 Route::post('/posts', 'PostController@savePost');
 
-Route::post('/post/delete/{id}', 'PostController@deletePost');
+Route::post('/post/{id}/delete', 'PostController@deletePost');
 
-Route::get('post/edit/{id}', 'PostController@editPost');
+Route::get('post/{id}/edit', 'PostController@editPost');
 
 Auth::routes();
 

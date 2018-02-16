@@ -10002,9 +10002,14 @@ a.text-dark:focus {
 }
 
 body {
+  height: 100vh;
   font-size: 13px;
   color: #626262;
   background-color: #fff;
+}
+
+#app {
+  height: 100%;
 }
 
 .edit-wrapper {
@@ -10119,5 +10124,6 @@ body {
 .outer-edit-box .inner-edit-box .right-side .image-row .inner-image img {
   border-radius: 3px;
   width: 100%;
+  max-height: 400px;
 }
 
