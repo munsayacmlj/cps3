@@ -18,8 +18,9 @@ class PostController extends Controller
 
     public function showPost($id) {
         $post = Post::find($id);
-
-        return view('pages/post', compact('post'));
+        $topics = Topic::all();
+        
+        return view('pages/post', compact('post', 'topics'));
     }
 
     public function savePost(Request $request) {
@@ -82,7 +83,9 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect('posts');
+        $url = "posts/".$id;
+        return redirect($url);
+        // return view('pages/post');
 
     }
 }

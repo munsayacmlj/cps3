@@ -17,17 +17,23 @@ Route::get('/', function () {
     return view('home', compact('topics'));
 });
 
-Route::get('/posts', 'PostController@showAllPosts');
+Route::get('posts', 'PostController@showAllPosts')->middleware('auth');
 
-Route::post('/posts', 'PostController@savePost');
+Route::post('posts', 'PostController@savePost')->middleware('auth');
 
-Route::get('posts/{id}', 'PostController@showPost');
+Route::get('posts/{id}', 'PostController@showPost')->middleware('auth');
 
-Route::post('/posts/{id}/delete', 'PostController@deletePost');
+Route::post('posts/{id}/delete', 'PostController@deletePost')->middleware('auth');
 
-Route::get('posts/{id}/edit', 'PostController@editPostForm');
+Route::get('posts/{id}/edit', 'PostController@editPostForm')->middleware('auth');
 
-Route::post('posts/{id}/edit', 'PostController@updatePost');
+Route::post('posts/{id}/edit', 'PostController@updatePost')->middleware('auth');
+
+Route::post('posts/{id}/comment', 'CommentController@saveComment')->middleware('auth');
+
+Route::post('posts/{p}/comment/{c}/delete', 'CommentController@deleteComment')->middleware('auth');
+
+Route::post('posts/{p}/comment/{c}/edit', 'CommentController@updateComment')->middleware('auth');
 
 Auth::routes();
 

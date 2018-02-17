@@ -10001,15 +10001,32 @@ a.text-dark:focus {
           box-sizing: border-box;
 }
 
+html,
 body {
-  height: 100vh;
+  height: 100%;
+}
+
+body {
   font-size: 13px;
   color: #626262;
-  background-color: #fff;
+  background-color: #f2f2f2;
+}
+
+textarea {
+  resize: none;
+}
+
+.dropdown-item {
+  padding: 0.2rem 0.5rem !important;
 }
 
 #app {
   height: 100%;
+}
+
+.user {
+  color: #3a8fc8;
+  font-weight: 600;
 }
 
 .edit-wrapper {
@@ -10125,5 +10142,82 @@ body {
   border-radius: 3px;
   width: 100%;
   max-height: 400px;
+}
+
+/* Post Page */
+
+.post-preview .edit-post {
+  border: 1px solid #f2f2f2;
+}
+
+.post-preview .edit-post a {
+  color: #626262;
+}
+
+.post-preview .edit-post a:hover {
+  text-decoration: none;
+}
+
+.post-preview .post-image {
+  text-align: center;
+}
+
+.post-preview .post-image img {
+  height: 100%;
+}
+
+.post-preview .comment-wrapper {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.post-preview .comment-wrapper .comment-heading {
+  border-bottom: 1px solid #ddd;
+}
+
+.post-preview .comment-wrapper .comment-body .comment {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.post-preview .comment-wrapper .comment-body .comment a {
+  color: blue;
+}
+
+.post-preview .comment-wrapper .comment-body .comment a:hover {
+  text-decoration: none;
+}
+
+.post-preview .comment-wrapper .comment-body .comment .edit-area {
+  display: none;
+}
+
+.post-preview .comment-wrapper .comment-body .comment .comment-input {
+  border-radius: 4px;
+}
+
+.post-preview .comment-wrapper .comment-body .comment small {
+  cursor: pointer;
+}
+
+.post-preview .comment-wrapper .comment-body .comment .comment-paragraphs {
+  color: #000;
+  font-weight: 500;
+}
+
+.post-preview .add-comment-section {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.post-preview .add-comment-section .first-row {
+  border-bottom: 1px solid #eee;
+}
+
+.post-preview .add-comment-section .add-comment-footer {
+  background-color: #e6e6e6;
+  border-top: 1px solid #ddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 
