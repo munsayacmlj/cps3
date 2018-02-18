@@ -8,7 +8,7 @@
 			<div class="col col-sm-12 col-md-8 col-lg-9">		
 				<div class="row py-3 mb-4" style="background-color: #fff;">
 								
-					<div class="col col-md-4">
+					<div class="col col-md-6">
 						<div class="first-row">
 							<span><i class="fas fa-tag"></i> {{ $post->topic->topic }}</span>
 							@if (Auth::user()->name == $post->user->name)	
@@ -38,7 +38,7 @@
 						</div>
 					</div>
 
-					<div class="col col-sm-12 col-md-8 mt-4">
+					<div class="col col-sm-12 col-md-6 mt-4">
 						<div class="post-image">
 							<img src='{{ asset("storage/upload/$post->image") }}'>
 						</div>

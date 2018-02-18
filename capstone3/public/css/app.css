@@ -10198,10 +10198,12 @@ textarea {
 
 .post-preview .post-image {
   text-align: center;
+  width: 100%;
 }
 
 .post-preview .post-image img {
-  height: 100%;
+  max-height: inherit;
+  width: inherit;
 }
 
 .post-preview .comment-wrapper {

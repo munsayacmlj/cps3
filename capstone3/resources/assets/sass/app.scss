@@ -8,6 +8,16 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+$primary-color: #626262;
+
+@mixin center-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 * {
 	margin: 0;
 	padding: 0;
@@ -20,7 +30,7 @@ html, body {
 
 body {
   font-size: 13px;
-  color: #626262;
+  color: $primary-color;
   // background-color: #fff;
   background-color: #f2f2f2;
 }
@@ -229,7 +239,7 @@ textarea{
   .edit-post{
     border: 1px solid #f2f2f2;
     a{
-      color: #626262;
+      color: $primary-color;
       &:hover{
         text-decoration: none;
       }
@@ -238,8 +248,12 @@ textarea{
 
   .post-image{
     text-align: center;
+    width: 100%;
+    // position: relative;
     img {
-      height: 100%;
+      // @include center-item;
+      max-height: inherit;
+      width: inherit;
     }
   }
 

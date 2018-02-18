@@ -35,6 +35,8 @@ Route::post('posts/{p}/comment/{c}/delete', 'CommentController@deleteComment')->
 
 Route::post('posts/{p}/comment/{c}/edit', 'CommentController@updateComment')->middleware('auth');
 
+// Route::get('people', '')
+
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
