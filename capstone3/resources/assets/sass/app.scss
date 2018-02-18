@@ -43,6 +43,10 @@ textarea{
   }
 }
 
+.inline {
+  display: inline-block !important;
+}
+
 .wrapper{
   // height: 100vh;
   // background-color: #f2f2f2;
@@ -101,7 +105,16 @@ textarea{
 }
 
 /* Posts Page */
-.outer-card{
+
+.posts{
+  column-count: 5;
+  column-gap: 10px;
+}
+
+.grid-item{
+  width: 350px;
+}
+// .outer-card{
   .card{
     background-color: #fff;
     img{
@@ -111,13 +124,38 @@ textarea{
     .card-header{
       background-color: #fff !important;
       border-bottom: 1px solid #daeffd;
+      
+      .action-btns{
+        a{
+          color: #3E3E3E;
+          &:hover{
+            text-decoration: none;
+          }
+        }
+        .edit-post{
+          border: 1px solid #f2f2f2;
+          border-radius: 3px;
+
+        }
+      }
     }
+  
+    .card-body{
+      .card-title{
+        a{
+          &:hover{
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
     .card-footer{
       background-color: #fff;
       
     }
   }
-}
+// }
 
 /* Edit page */
 
@@ -126,6 +164,14 @@ textarea{
   .inner-edit-box{
     display: block;
     
+    .header-edit{
+      .del-btn{
+        border: 1px solid #f2f2f2;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+    }
+
     label{
       text-transform: uppercase;
       font-size: 17px;

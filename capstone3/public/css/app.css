@@ -10024,6 +10024,10 @@ textarea {
   height: 100%;
 }
 
+.inline {
+  display: inline-block !important;
+}
+
 .user {
   color: #3a8fc8;
   font-weight: 600;
@@ -10077,20 +10081,48 @@ textarea {
 
 /* Posts Page */
 
-.outer-card .card {
+.posts {
+  -webkit-column-count: 5;
+          column-count: 5;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+}
+
+.grid-item {
+  width: 350px;
+}
+
+.card {
   background-color: #fff;
 }
 
-.outer-card .card img {
+.card img {
   width: 100%;
 }
 
-.outer-card .card .card-header {
+.card .card-header {
   background-color: #fff !important;
   border-bottom: 1px solid #daeffd;
 }
 
-.outer-card .card .card-footer {
+.card .card-header .action-btns a {
+  color: #3E3E3E;
+}
+
+.card .card-header .action-btns a:hover {
+  text-decoration: none;
+}
+
+.card .card-header .action-btns .edit-post {
+  border: 1px solid #f2f2f2;
+  border-radius: 3px;
+}
+
+.card .card-body .card-title a:hover {
+  text-decoration: none;
+}
+
+.card .card-footer {
   background-color: #fff;
 }
 
@@ -10102,6 +10134,12 @@ textarea {
 
 .outer-edit-box .inner-edit-box {
   display: block;
+}
+
+.outer-edit-box .inner-edit-box .header-edit .del-btn {
+  border: 1px solid #f2f2f2;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 .outer-edit-box .inner-edit-box label {

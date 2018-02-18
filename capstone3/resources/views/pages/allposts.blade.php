@@ -3,13 +3,13 @@
 @section('content')
 	
 	<div class="container-fluid py-4" style="background-color: #fff;">
-		<div class="row px-3">
+		<div class="px-3 grid">
 			@foreach ($posts as $post)
-			<div class="col col-sm-4 col-md-4 col-xl-2 outer-card" id="card_{{ $post->id }}">
-				<div class="card">
+			{{-- <div class="outer-card mr-3 mb-3" id="card_{{ $post->id }}" style="width: 300px;"> --}}
+				<div class="card mr-3 mb-3 grid-item" id="card_{{ $post->id }}">
 					<div class="card-header">
 						<span class="card-poster h5 float-left">{{ $post->user->name }}</span>
-						<span class="float-right">
+						<span class="float-right action-btns">
                         @auth    
 							@if ($post->user->name == Auth::user()->name)
 							<a href='{{ url("posts/$post->id/edit") }}' class="edit-post">
@@ -23,7 +23,9 @@
 						</span>
 					</div>
 					<div class="card-body">
-						<div class="card-title h5 pb-1">{{ $post->title }}</div>
+						<div class="card-title h5 pb-1">
+                            <a href='{{ url("posts/$post->id") }}'>{{ $post->title }}</a>
+                        </div>
 						<p>{{ $post->content }}</p>
 					</div>
 					@if ($post->image != NULL)
@@ -42,7 +44,7 @@
 						</p>
 					</div>
 				</div>
-			</div>
+			{{-- </div> --}}
 			@endforeach
 		</div>
 	</div>
@@ -99,7 +101,7 @@
                     </div>
                 </div>
                 <div class="mt-3">
-                    <button type="submit" class="btn btn-primary float-right">Save changes</button>
+                    <button type="submit" class="btn btn-primary float-right">Save</button>
                 </div>
             </form>
             @else

@@ -8,8 +8,11 @@
 	</div>
 		<div class="container-fluid py-4 outer-edit-box">
 			<div class="mx-2 inner-edit-box">
-				<div class="header-edit">
-					<span class="lead pl-3">Edit Post</span>
+				<div class="header-edit row">
+					<span class="col col-md-6 lead pl-3">Edit Post</span>
+					<div class="col col-md-6 lead pl-3">
+						<span class="float-right h6 py-1 px-2 del-btn"><i class="far fa-trash-alt"></i> Delete</span>
+					</div>
 				</div>
 
 				<form method="POST" enctype="multipart/form-data">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use File;
 use App\Post;
 use App\Topic;
+use App\Comment;
 use Auth;
 use Illuminate\Http\Request;
 class PostController extends Controller
@@ -49,7 +50,8 @@ class PostController extends Controller
     }
 
     public function deletePost($id) {
-    	Post::find($id)->delete();
+        Comment::where('post_id', $id)->delete();
+    	Post::findOrFail($id)->delete();
     	return redirect('/posts');
     }
 

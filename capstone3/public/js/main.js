@@ -1,4 +1,13 @@
+$(window).on('load', function() {
+	$('.grid').masonry({
+		itemSelector: '.grid-item',
+		columnWidth: 200
+	});
+});
+
+
 $(document).ready(function() {
+
 	$("#image").on("change", function() {
 	    var image = this.files[0].name;
 	    $("#filename").val(image);
