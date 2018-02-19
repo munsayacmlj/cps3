@@ -61,9 +61,12 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
+                                        <a class="dropdown-item" href='/people/{{ $user }}'><i class="fas fa-user"></i> View Profile</a>
+                                    </li>
+                                    <li>
                                         
                                         <a class="dropdown-item" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Logout</a>
                                     </li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf

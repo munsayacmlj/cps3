@@ -3,10 +3,10 @@
 @section('content')
 	
 	<div class="container-fluid py-4" style="background-color: #fff;">
-		<div class="px-3 grid">
+		<div class="grid">
 			@foreach ($posts as $post)
 			{{-- <div class="outer-card mr-3 mb-3" id="card_{{ $post->id }}" style="width: 300px;"> --}}
-				<div class="card mr-3 mb-3 grid-item" id="card_{{ $post->id }}">
+				<div class="card mb-3 grid-sizer grid-item" id="card_{{ $post->id }}">
 					<div class="card-header">
 						<span class="card-poster h5 float-left">{{ $post->user->name }}</span>
 						<span class="float-right action-btns">

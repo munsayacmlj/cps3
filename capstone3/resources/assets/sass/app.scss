@@ -8,6 +8,9 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// Bootswatch Flatly
+@import 'bootswatch';
+
 $primary-color: #626262;
 
 @mixin center-item {
@@ -127,9 +130,23 @@ textarea{
   column-gap: 10px;
 }
 
-.grid-item{
-  width: 350px;
+.grid {
+  // max-width: 1200px;
 }
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-sizer,
+.grid-item { 
+
+  width: 19%; 
+
+}
+
 // .outer-card{
   .card{
     background-color: #fff;

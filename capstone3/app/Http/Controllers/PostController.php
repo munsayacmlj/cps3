@@ -13,15 +13,17 @@ class PostController extends Controller
     public function showAllPosts() {
     	$posts = Post::all();
     	$topics = Topic::all();
-       
-    	return view('pages/allposts', compact('posts', 'topics'));
+        $user = str_replace(" ", "-", strtolower(Auth::user()->name));
+
+    	return view('pages/allposts', compact('posts', 'topics', 'user'));
     }
 
     public function showPost($id) {
         $post = Post::find($id);
         $topics = Topic::all();
-        
-        return view('pages/post', compact('post', 'topics'));
+        $user = str_replace(" ", "-", strtolower(Auth::user()->name));
+
+        return view('pages/post', compact('post', 'topics', 'user'));
     }
 
     public function savePost(Request $request) {
@@ -59,7 +61,9 @@ class PostController extends Controller
     	$post = Post::find($id);
         $topics = Topic::all();
         $ip = $request->getClientIp();
-    	return view('pages/edit', compact('post', 'topics', 'ip'));
+        $user = str_replace(" ", "-", strtolower(Auth::user()->name));
+
+    	return view('pages/edit', compact('post', 'topics', 'ip', 'user'));
     }
 
     public function updatePost(Request $request, $id) {

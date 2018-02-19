@@ -1,7 +1,9 @@
 $(window).on('load', function() {
 	$('.grid').masonry({
 		itemSelector: '.grid-item',
-		columnWidth: 200
+		columnWidth: '.grid-sizer',
+		percentPosition: true,
+		gutter: 10
 	});
 });
 
@@ -19,7 +21,7 @@ $(document).ready(function() {
 
 			reader.onload = function(e) {
 				$("#image-tag").attr('src', e.target.result);
-			}
+			};
 
 			reader.readAsDataURL(input.files[0]);
 		}

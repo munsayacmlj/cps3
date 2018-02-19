@@ -14,7 +14,9 @@ use App\Topic;
 
 Route::get('/', function () {
 	$topics = Topic::all();
-    return view('home', compact('topics'));
+	$user = str_replace(" ", "-", strtolower(Auth::user()->name));
+
+    return view('home', compact('topics', 'user'));
 });
 
 Route::get('posts', 'PostController@showAllPosts')->middleware('auth');
@@ -36,6 +38,8 @@ Route::post('posts/{p}/comment/{c}/delete', 'CommentController@deleteComment')->
 Route::post('posts/{p}/comment/{c}/edit', 'CommentController@updateComment')->middleware('auth');
 
 Route::get('people', 'UserController@showUsers')->middleware('auth');
+
+Route::get('people/{name}', 'UserController@userPreview')->middleware('auth');
 
 Auth::routes();
 
